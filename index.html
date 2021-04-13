@@ -4,54 +4,96 @@
   <title>동요 - HTML</title>
   <meta cherset="UTF-8">
   <style>
+  /* 제목 하단 선을 마진 없이 끝까지 그어지도록 하기 위함 */
   body {
     margin:0;
   }
+  /* 모든 링크에 밑줄을 삭제 */
   a {
     text-decoration:none;
   }
+  /* h1과 ol을 묶어서 link라는 이름의 클래스로 묶고 글자 색을 분홍으로 지정 */
   .link {
     color:pink;
   }
+  /* h1에 head라는 이름의 ID를 부여한 뒤 글자 색상을 하늘색으로 지정, 폰트 크기를 키움 */
   #head {
     color:skyblue;
     font-size:45px;
   }
+  /* h1 하단에 선이 그어지도록 하며 글자를 중앙에 정렬 */
   h1 {
     text-align:center;
     border-bottom:2px pink solid;
     padding-bottom:21.44px;
     margin-bottom:0;
   }
+  /* 목록 우측에 선이 그어지도록 하며 width를 이용해 크기 조정 */
   ol {
     border-right:2px pink solid;
     width:100px;
     margin:0;
     padding: 20px;
   }
+  /* 목록과 본문을 묶어 grid라는 이름의 ID를 부여, 그리드를 사용하여 정렬 */
+  /* 목록의 크기는 150px로 고정, 본문의 크기는 1fr로 전체를 유동적으로 사용 */
+  #grid {
+    display:grid;
+    grid-template-columns: 150px 1fr;
+  }
+  /* padding 값을 수정하여 목록의 여백 조정 */
+  #grid ol {
+    padding-left:41px;
+  }
+  /* padding 값을 수정하여 본문의 여백 조정 */
+  #article {
+    padding-left:47px;
+  }
+  @media(max-width:959px){
+    #grid {
+      display:block;
+    }
+    #grid ol {
+      border-right:none;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #grid div {
+      border-top:2px pink solid;
+    }
+  }
   </style>
 </head>
 <body>
   <h1><a href="index.html" class="link" id="head">동요</a></h1>
-  <ol>
-    <li><a href="1.html" class="link">나비야</a></li>
-    <li><a href="2.html" class="link">곰 세 마리</a></li>
-    <li><a href="3.html" class="link">작은 동물원</a></li>
-  </ol>
-  <!--
-  <h1><a href="index.html"><font color="skyblue">동요</font></a></h1>
-  <ol>
-    <li><a href="1.html"><font color="pink">나비야</font></a></li>
-    <li><a href="2.html"><font color="pink">곰 세 마리</font></a></li>
-    <li><a href="3.html"><font color="pink">작은 동물원</font></a></li>
-  </ol>
-  -->
-  <h2>동요</h2>
-  <a href="https://www.youtube.com/user/pinkfongko" target="_blank" title="동요 유튜브 채널"><img src="nursery.jpg" width="200"></a>
-  <p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/N8pame4Y8BU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </p>
-  <p><strong><u>동요</u></strong>란, 문학 장르의 하나로 어린이들의 생활 감정이나 심리를 표현한 정형시.<br> 형식상 음수율이 강화되어 음악성이 돋보이며 형식과 수사(修辭)를 중요시한다.</p><p>어린이를 위하여 동심(童心)을 바탕으로 지은 노래.
-</p>
+  <div id="grid">
+    <ol>
+      <li><a href="1.html" class="link">나비야</a></li>
+      <li><a href="2.html" class="link">곰 세 마리</a></li>
+      <li><a href="3.html" class="link">작은 동물원</a></li>
+    </ol>
+    <!--
+    <h1><a href="index.html"><font color="skyblue">동요</font></a></h1>
+    <ol>
+      <li><a href="1.html"><font color="pink">나비야</font></a></li>
+      <li><a href="2.html"><font color="pink">곰 세 마리</font></a></li>
+      <li><a href="3.html"><font color="pink">작은 동물원</font></a></li>
+    </ol>
+    -->
+    <div id="article">
+      <h2>동요</h2>
+      <a href="https://www.youtube.com/user/pinkfongko" target="_blank" title="동요 유튜브 채널"><img src="nursery.jpg" width="200"></a>
+      <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/N8pame4Y8BU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </p>
+      <p>
+        <strong><u>동요</u></strong>란, 문학 장르의 하나로 어린이들의 생활 감정이나 심리를 표현한 정형시.<br> 형식상 음수율이 강화되어 음악성이 돋보이며 형식과 수사(修辭)를 중요시한다.
+      </p>
+      <p>
+        어린이를 위하여 동심(童心)을 바탕으로 지은 노래.
+      </p>
+    </div>
+  </div>
 </body>
 </html>
