@@ -6,7 +6,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1><a href="index.html" class="link" id="head">동요</a></h1>
+  <div id="title">
+    <div id="button">
+      <input type="button" value="day" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black'  
+      ">
+      <input type="button" value="night" onclick="
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+      ">
+    </div>
+    <h1><a href="index.html" class="link" id="head">동요</a></h1>
+  </div>
   <div id="grid">
     <ol>
       <li><a href="1.html" class="link">나비야</a></li>
@@ -23,7 +35,7 @@
     -->
     <div id="article">
       <h2>동요</h2>
-      <a href="https://www.youtube.com/user/pinkfongko" target="_blank" title="동요 유튜브 채널"><img src="nursery.jpg" width="200"></a>
+      <a href="https://www.youtube.com/user/pinkfongko" target="_blank" title="동요 유튜브 채널"><img src="nursery.jpg" width="200" height="130"></a>
       <p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/N8pame4Y8BU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </p>
