@@ -8,14 +8,28 @@
 <body>
   <div id="title">
     <div id="button">
+      <input id="toggle" type='button' value='night' onclick="
+        if(document.querySelector('#toggle').value === 'night') {
+          document.querySelector('body').style.backgroundColor='black';
+          document.querySelector('body').style.color='white';
+          document.querySelector('#toggle').value='day';
+        }
+        else {
+          document.querySelector('body').style.backgroundColor='white';
+          document.querySelector('body').style.color='black';
+          document.querySelector('#toggle').value='night';
+        }
+      ">
+      <!--
       <input type="button" value="day" onclick="
         document.querySelector('body').style.backgroundColor='white';
-        document.querySelector('body').style.color='black'  
+        document.querySelector('body').style.color='black';
       ">
       <input type="button" value="night" onclick="
         document.querySelector('body').style.backgroundColor='black';
         document.querySelector('body').style.color='white';
       ">
+      -->
     </div>
     <h1><a href="index.html" class="link" id="head">동요</a></h1>
   </div>
