@@ -1,6 +1,8 @@
 /* 제목 하단 선을 마진 없이 끝까지 그어지도록 하기 위함 */
+/* 배경색을 LavenderBlush로 지정 */
 body {
   margin:0;
+  background-color:LavenderBlush;
 }
 /* 모든 링크에 밑줄을 삭제 */
 a {
@@ -8,11 +10,11 @@ a {
 }
 /* h1과 ol을 묶어서 link라는 이름의 클래스로 묶고 글자 색을 분홍으로 지정 */
 .link {
-  color:pink;
+  color:Pink;
 }
-/* h1에 head라는 이름의 ID를 부여한 뒤 글자 색상을 하늘색으로 지정, 폰트 크기를 키움 */
+/* h1에 head라는 이름의 ID를 부여한 뒤 글자 색상을 Thistle로 지정, 폰트 크기를 키움 */
 #head {
-  color:powderblue;
+  color:Thistle;
   font-size:45px;
 }
 /* h1 글자를 중앙에 정렬 */
@@ -23,11 +25,11 @@ h1 {
 }
 /* 버튼과 h1을 묶은 ID인 title의 하단에 선을 그음*/
 #title {
-  border-bottom:2px pink solid;
+  border-bottom:2px Pink solid;
 }
 /* 목록 우측에 선이 그어지도록 하며 width를 이용해 크기 조정 */
 ol {
-  border-right:2px pink solid;
+  border-right:2px Pink solid;
   width:100px;
   margin:0;
   padding:20px;
@@ -58,6 +60,6 @@ ol {
   }
   #grid div {
     /* 본문 위 목록과의 경계선을 그음 */
-    border-top:2px pink solid;
+    border-top:2px Pink solid;
   }
 }
