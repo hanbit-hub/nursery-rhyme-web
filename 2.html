@@ -4,10 +4,63 @@
   <title>곰 세 마리 - HTML</title>
   <meta cherset="UTF-8">
   <link rel="stylesheet" href="style.css">
+  <script>
+    var Body = {
+      /* 배경색을 지정(color는 매개변수) */
+      SetBackgroundColor:function(color) {
+        var bodyTarget = document.querySelector('body')
+        bodyTarget.style.backgroundColor=color;
+      },
+      /* Body의 글자색을 지정(color는 매개변수) */
+      SetColor:function(color) {
+        var bodyTarget = document.querySelector('body')
+        document.querySelector('body').style.color=color;
+      }
+    }
+    var List = {
+      /*
+       * <a>태그를 전부 가져와 변수에 저장(배열 형태와 흡사한 값이 나옴)
+       * while문을 사용하여 반복
+       * 글자의 색상을 매개변수 color를 이용하여 바꿈
+       */
+       SetAllColor:function(color) {
+         var i = 0;
+         var aTag = document.querySelectorAll('a')
+         while(i < aTag.length) {
+           aTag[i].style.color=color;
+           i++;
+         }
+       },
+       /*
+        * <a>태그를 전부 가져와 변수에 저장(배열 형태와 흡사한 값이 나옴)
+        * while문 안에 if문을 사용하여 제목과 목록의 색상의 차이를 줌
+        * 인덱스가 0일 때 글자의 색상을 매개변수 head로 바꿈
+        * 그 외의 인덱스에서는 글자의 색상을 매개변수 list로 바꿈
+        */
+        SetColor:function(head, list) {
+          i = 0;
+          aTag = document.querySelectorAll('a')
+          while(i < aTag.length) {
+            if(i === 0) {
+              aTag[i].style.color=head;
+              i++;
+            }
+            else {
+              aTag[i].style.color=list;
+              i++;
+            }
+          }
+        }
+    }
+    /* 버튼의 value를 변경(self와 mode는 매개변수) */
+    function ChangeButtonValue(self, mode) {
+      self.value=mode;
+    }
+  </script>
 </head>
 <body>
   <div id="title">
-    <div>
+    <div id="button">
       <input type='button' value='night' onclick="
         var bodyTarget = document.querySelector('body')
         if(this.value === 'night') {
@@ -15,72 +68,48 @@
            * 배경색을 검정으로 설정
            * 글자색을 흰색으로 설정
            * 버튼의 value를 day로 바꿈
+           * 목록의 글자색을 powderblue로 바꿈
            */
-          bodyTarget.style.backgroundColor='black';
-          bodyTarget.style.color='white';
-          this.value='day';
-          /*
-           * <a>태그를 전부 가져와 변수에 저장(배열 형태와 흡사한 값이 나옴)
-           * while문을 사용하여 반복
-           * 글자의 색상을 powderblue로 바꿈
-           */
-           var i = 0;
-           var aTag = document.querySelectorAll('a')
-           while(i < aTag.length) {
-             aTag[i].style.color='LightCyan';
-             i++;
-           }
+          Body.SetBackgroundColor('black');
+          Body.SetColor('white');
+          ChangeButtonValue(this, 'day')
+          List.SetAllColor('powderblue');
         }
         else if(this.value === 'day') {
           /*
            * 배경색을 흰색으로 설정
            * 글자색을 검정으로 설정
            * 버튼의 value를 default로 바꿈
+           * 목록의 글자색을 lightpink로 바꿈
            */
-          bodyTarget.style.backgroundColor='white';
-          bodyTarget.style.color='black';
-          this.value='default';
-          /*
-           * <a>태그를 전부 가져와 변수에 저장(배열 형태와 흡사한 값이 나옴)
-           * while문을 사용하여 반복
-           * 글자의 색상을 LightPink로 바꿈
-           */
-           var i = 0;
-           var aTag = document.querySelectorAll('a')
-           while(i < aTag.length) {
-             aTag[i].style.color='LightPink';
-             i++;
-           }
+           Body.SetBackgroundColor('white');
+           Body.SetColor('black');
+           ChangeButtonValue(this, 'default');
+           List.SetAllColor('lightpink');
+
         }
         else {
           /*
-           * 배경색을 LavenderBlush로 설정
-           * 글자색을 검정으로 설정
+           * 배경색을 lavenderBlush로 설정
+           * 글자색을 pink로 설정
            * 버튼의 value를 night로 바꿈
            */
-          bodyTarget.style.backgroundColor='LavenderBlush';
-          bodyTarget.style.color='black';
-          this.value='night';
-          /*
-           * <a>태그를 전부 가져와 변수에 저장(배열 형태와 흡사한 값이 나옴)
-           * while문 안에 if문을 사용하여 제목과 목록의 색상의 차이를 줌
-           * 인덱스가 0일 때 글자의 색상을 Thistle로 바꿈
-           * 그 외의 인덱스에서는 글자의 색상을 Pink로 바꿈
-           */
-           i = 0;
-           aTag = document.querySelectorAll('a')
-           while(i < aTag.length) {
-             if(i === 0) {
-               aTag[i].style.color='Thistle';
-               i++;
-             }
-             else {
-              aTag[i].style.color='Pink';
-              i++;
-            }
-          }
-       }
+           Body.SetBackgroundColor('lavenderBlush');
+           Body.SetColor('pink');
+           ChangeButtonValue(this, 'night');
+           List.SetColor('thistle', 'pink');
+        }
       ">
+      <!--
+      <input type="button" value="day" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+      ">
+      <input type="button" value="night" onclick="
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+      ">
+      -->
     </div>
     <h1><a href="index.html"  class="link" id="head">동요</a></h1>
   </div>
